@@ -15,7 +15,7 @@ const AddDoctor = () => {
     const { data: specialties, isLoading } = useQuery({
         queryKey: ['specialty'],
         queryFn: async () => {
-            const res = await fetch('https://doctors-portal-server-rust.vercel.app/appointmentSpecialty');
+            const res = await fetch('https://doctors-portal-server-gray-six.vercel.app/appointmentSpecialty');
             const data = await res.json();
             return data;
         }
@@ -42,7 +42,7 @@ const AddDoctor = () => {
                 }
 
                 // save doctor information to the database
-                fetch('https://doctors-portal-server-rust.vercel.app/doctors', {
+                fetch('https://doctors-portal-server-gray-six.vercel.app/doctors', {
                     method: 'POST',
                     headers: {
                         'content-type': 'application/json', 
